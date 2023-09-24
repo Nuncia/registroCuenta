@@ -1,16 +1,12 @@
-import Formulario from "./Formulario";
-import Alerta from "./Alert";
-import SocialButton from "./SocialButton";
 import { useState } from "react";
+import Alerta from "./Alert";
+import Formulario from "./Formulario";
+import SocialButton from "./SocialButton";
 
 
 export const Registro = () => {
-    const [error, setError] = useState(false)
-    const [hijoPadre, setHijoPadre] = useState(false);
+    const [alert, setAlert] = useState({msg: '', color: ''})
 
-    const datosHijo = ()  => {
-
-    }
     return(
        <>
             <div className="registro">
@@ -19,8 +15,8 @@ export const Registro = () => {
                     iconoGit = {<a href="https://github.com/Nuncia"><i className="fa-brands fa-github fa-lg"></i></a>}
                     iconoLink = {<a href="https://www.linkedin.com/feed/"><i className="fa-brands fa-linkedin-in fa-lg"></i></a>}
                 />
-                <Formulario datosHijo={datosHijo}/>
-                {error ? <Alerta colorAlert= 'red'  textoAlert='Faltan campos por completar!'/> : <Alerta colorAlert= 'green'  textoAlert='Usuario ha sido registrado!'/>}
+                <Formulario setAlert={setAlert}/>
+                    {alert.msg && <Alerta colorAlert={alert.color} textoAlert={alert.msg}/>}
             </div>
        </> 
     );

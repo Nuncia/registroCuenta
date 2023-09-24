@@ -1,4 +1,4 @@
-import Alert from 'react-bootstrap/Alert';
+import PropTypes from 'prop-types';
 
 const Alerta = ({colorAlert, textoAlert}) => {
     return(
@@ -10,4 +10,10 @@ const Alerta = ({colorAlert, textoAlert}) => {
     );
 };
 
+Alerta.propTypes = {
+  colorAlert: PropTypes.string.isRequired,
+  textoAlert: PropTypes.string
+}
+
 export default Alerta;
+

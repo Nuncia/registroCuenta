@@ -22,10 +22,4 @@ const SocialButton = ({iconoFace, iconoGit, iconoLink}) => {
     );
 };
 
-SocialButton.propTypes = {
-    iconoFace: PropTypes.string.isRequired,
-    iconoGit: PropTypes.string.isRequired,
-    iconoLink: PropTypes.string.isRequired
-}
-
 export default SocialButton;
