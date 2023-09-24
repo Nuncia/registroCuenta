@@ -5,29 +5,18 @@ import SocialButton from "./SocialButton";
 
 
 export const Registro = () => {
-    const [error, setError] = useState(false)
-    const [datoRecibido, setDatoRecibido] = useState('');
-
-    const recibirDatosdelHijo = (claseColor) => {
-        if(setDatoRecibido(claseColor) == 'danger'){
-            setError(false);
-    
-        } else{
-            setError(true);
-            return
-        }
-    }
+    const [alert, setAlert] = useState({msg: '', color: ''})
 
     return(
        <>
-            <div className="registro">{datoRecibido}
+            <div className="registro">
                 <SocialButton
                     iconoFace = {<a href="https://www.facebook.com/home.php"><i className="fa-brands fa-facebook fa-lg"></i></a>}
                     iconoGit = {<a href="https://github.com/Nuncia"><i className="fa-brands fa-github fa-lg"></i></a>}
                     iconoLink = {<a href="https://www.linkedin.com/feed/"><i className="fa-brands fa-linkedin-in fa-lg"></i></a>}
                 />
-                <Formulario onDatosGenerados= {recibirDatosdelHijo}/>
-                {error ? <Alerta colorAlert= {datoRecibido}  textoAlert='Usuario ha sido registrado!'/> : null}
+                <Formulario setAlert={setAlert}/>
+                    {alert.msg && <Alerta colorAlert={alert.color} textoAlert={alert.msg}/>}
             </div>
        </> 
     );

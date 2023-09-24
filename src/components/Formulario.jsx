@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Formulario = ({ onSubmit }) => {
+const Formulario = ({ onSubmit, setAlert }) => {
   const [nombre, setNombre] = useState('');
   const [email, setEmail] = useState('');
   const [contrasena, setContrasena] = useState('');
@@ -63,8 +63,18 @@ const Formulario = ({ onSubmit }) => {
     if (formIsValid) {
       onSubmit({ nombre, email, contrasena });
       setMensaje('Registro exitoso. ¡Bienvenido!');
+      setAlert({
+        msg: mensaje,
+        color: 'success',
+        error: false
+      });
     } else {
       setMensaje('');
+      setAlert({
+        msg:'Error en el  proceso de registro.',
+        color: 'danger',
+        error: true
+      });
     }
   };
 
