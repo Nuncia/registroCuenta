@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { propTypes } from 'react';
 
 const Formulario = ({ onSubmit, setAlert }) => {
   const [nombre, setNombre] = useState('');
@@ -65,14 +64,14 @@ const Formulario = ({ onSubmit, setAlert }) => {
       // onSubmit({ nombre, email, contrasena });
       setMensaje('Registro exitoso. ¡Bienvenido!');
       setAlert({
-        msg: 'Registro exitoso. ¡Bienvenido!',
+        msg: mensaje,
         color: 'green',
         error: true
       })
     } else {
       setMensaje('');
       setAlert({
-        msg: 'Faltan campos por completar.',
+        msg: 'Registro no exitoso',
         color: 'red',
         error: false
       })
@@ -136,7 +135,7 @@ const Formulario = ({ onSubmit, setAlert }) => {
           Registrarse
         </button>
       </form>
-      {/* {mensaje && <div className="alert alert-info mt-2">{mensaje}</div>} */}
+      {mensaje && <div className="alert alert-info mt-2">{mensaje}</div>}
     </div>
   );
 };
