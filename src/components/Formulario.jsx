@@ -61,7 +61,7 @@ const Formulario = ({ onSubmit, setAlert }) => {
     }
 
     if (formIsValid) {
-      // onSubmit({ nombre, email, contrasena });
+      onSubmit({ nombre, email, contrasena });
       setMensaje('Registro exitoso. ¡Bienvenido!');
       setAlert({
         msg: mensaje,
