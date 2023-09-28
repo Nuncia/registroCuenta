@@ -71,7 +71,7 @@ input{
   border-radius: 23px;
   background-color: #ffffff;
   width: 350px;
-  height: 575px;
+  height: 515px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -105,10 +105,16 @@ input{
   align-items: center;
 }
 
+.tituloRegistro{
+  margin-bottom: 39px;
+}
+
 .conteinerSocialButton{
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 10px;
+  gap: 5px;
 }
 
 .alert{
